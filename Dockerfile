@@ -22,4 +22,4 @@ ENV PORT=3000
 EXPOSE 3000
 
 # Run the web service on container startup.
-CMD node ./dist/server/entry.mjs
+CMD bun ./dist/server/entry.mjs
