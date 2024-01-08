@@ -17,7 +17,9 @@ COPY . ./
 # Build the application
 RUN bun run build
 
+ENV HOST=0.0.0.0
+ENV PORT=3000
 EXPOSE 3000
 
 # Run the web service on container startup.
-CMD [ "bun", "start", "--", "--host"]
+CMD node ./dist/server/entry.mjs
