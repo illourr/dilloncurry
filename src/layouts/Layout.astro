@@ -20,9 +20,9 @@ const { title } = Astro.props;
     <title>Dillon Curry - {title}</title>
   </head>
   <body>
-    <nav>
+    <nav class=" prose">
       <img src="/images/me.png" alt="Picture of Dillon Curry" class="my-1" />
-      <ul class="my-6">
+      <ul class="mt-0 flex items-center" >
         <li>
           <Link href="/">Home</Link>
         </li>
@@ -80,6 +80,7 @@ const { title } = Astro.props;
   nav {
     text-align: right;
     margin: 0 auto;
+    padding: 0 24px;
     max-width: 65ch;
     display: flex;
     justify-content: space-between;

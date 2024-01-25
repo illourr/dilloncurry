@@ -3,7 +3,7 @@ import Link from "./Link.astro";
 ---
 
 <div class="Page">
-  <main class="prose border-solid border-slate-300 border">
+  <main class="prose">
     <slot />
   </main>
 </div>
@@ -18,8 +18,8 @@ import Link from "./Link.astro";
   }
   .Page main {
     min-height: calc(100vh - var(--nav-height) * 2);
-    padding: 0 24px;
     flex-grow: 1;
-    margin: 0 24px 50vh 24px;
+    margin-bottom: 50vh;
+    padding: 0 24px;
   }
 </style>
