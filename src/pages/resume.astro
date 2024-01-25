@@ -4,12 +4,14 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Resume">
     <main> 
-      <iframe scrolling="no" width="200%" class="w-full" seamless allowfullscreen src="https://docs.google.com/document/d/e/2PACX-1vS95GlB-X_9ENSgireesUjMURAsDl885IgTvPEJesdDbal5lm4dDrYbvgRW3GHonbWqQp2q9ig1KB41/pub?embedded=true"></iframe>
-    </main>
+      <div style="overflow: auto!important; -webkit-overflow-scrolling: touch!important;">
+        <iframe class="w-full" seamless allowfullscreen src="https://docs.google.com/document/d/e/2PACX-1vS95GlB-X_9ENSgireesUjMURAsDl885IgTvPEJesdDbal5lm4dDrYbvgRW3GHonbWqQp2q9ig1KB41/pub?embedded=true"></iframe>
+      </div>
+      </main>
 </Layout>
 
 <style>
   iframe {
-    height: 1000px;
+    height: 1200px;
   }
 </style>
