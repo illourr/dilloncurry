@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import NewComponent from '../components/NewComponent'
 ---
 
 <Layout title="Home">
@@ -28,6 +29,7 @@ import Layout from '../layouts/Layout.astro';
 			/> -->
 		</ul>
 	</main>
+	<NewComponent client:load />
 </Layout>
 
 <style>
