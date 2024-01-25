@@ -22,7 +22,7 @@ const { title } = Astro.props;
   <body>
     <nav>
       <img src="/images/me.png" alt="Picture of Dillon Curry" class="my-1" />
-      <ul>
+      <ul class="my-6">
         <li>
           <Link href="/">Home</Link>
         </li>
@@ -78,15 +78,14 @@ const { title } = Astro.props;
       monospace;
   }
   nav {
+    text-align: right;
+    margin: 0 auto;
+    max-width: 65ch;
     display: flex;
     justify-content: space-between;
     height: 72px;
-    margin: 0 24px;
   }
 
-  nav ul {
-    padding: 24px;
-  }
   nav li {
     display: inline-block;
     padding-left: 4px;
