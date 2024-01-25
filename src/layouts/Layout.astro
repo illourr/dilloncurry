@@ -19,8 +19,8 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>Dillon Curry - {title}</title>
   </head>
-  <body>
-    <nav class=" prose">
+  <body class="dark:bg-gray-800 dark:prose-a:text-slate-100">
+    <nav class="prose dark:prose-invert">
       <img src="/images/me.png" alt="Picture of Dillon Curry" class="my-1" />
       <ul class="mt-0 flex items-center" >
         <li>
@@ -77,6 +77,7 @@ const { title } = Astro.props;
       Courier New,
       monospace;
   }
+
   nav {
     text-align: right;
     margin: 0 auto;
