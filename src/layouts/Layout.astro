@@ -1,5 +1,7 @@
 ---
 import Link from "../components/Link.astro";
+import Page from "../components/Page.astro"
+
 interface Props {
   title: string;
 }
@@ -20,7 +22,9 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+   
     <nav>
+      <img src="/images/me.png" alt="Picture of Dillon Curry" class="my-1">
       <ul>
         <li>
           <Link href="/">Home</Link>
@@ -35,12 +39,15 @@ const { title } = Astro.props;
         </li>
       </ul>
     </nav>
-    <slot />
+    <Page>
+      <slot />
+    </Page>
   </body>
 </html>
 <style is:global>
   :root {
     --page-max-width: 940px;
+    --nav-height: 72px;
     --accent: 136, 58, 234;
     --accent-light: 224, 204, 250;
     --accent-dark: 49, 10, 101;
@@ -52,7 +59,8 @@ const { title } = Astro.props;
     );
   }
   html {
-    font-family: system-ui, sans-serif;
+    font-family: "Gill Sans", sans-serif;
+    font-size: 18px;
     background-size: 224px;
   }
   code {
@@ -67,13 +75,19 @@ const { title } = Astro.props;
       monospace;
   }
   nav {
-    margin: 0 auto;
-    padding: 24px;
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    height: 72px;
     max-width: var(--page-max-width);
+    margin: 0 24px;
+  }
+
+  nav ul {
+    padding: 24px;
   }
 	nav li {
 		display: inline-block;
 		padding-left: 4px;
 	}
+
 </style>

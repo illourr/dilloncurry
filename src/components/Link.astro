@@ -5,12 +5,9 @@ interface Props {
 
 const { href } = Astro.props;
 ---
-<a class="Link" href={href}>
+<a class="hover:underline hover:text-blue-500 text-blue-800" href={href}>
   <slot />
 </a>
 
 <style>
-  .Link:hover {
-    text-decoration: underline;
-  }
 </style>

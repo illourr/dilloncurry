@@ -1,14 +1,19 @@
 ---
+import Link from "./Link.astro";
 ---
 
-<div class="Page">
+<div class="Page border-solid border-slate-300 border">
   <slot />
 </div>
+<small class="text-center block mb-10"
+  >😂 there is nothing down here - <Link href="#">Back to Top👆</Link></small
+>
 
 <style>
   .Page {
-    margin: 0 auto;
+    margin: 0 24px 50vh 24px;
     padding: 24px;
     max-width: var(--page-max-width);
+    min-height: calc(100vh - var(--nav-height) * 2);
   }
 </style>
