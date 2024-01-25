@@ -3,12 +3,15 @@ import Link from "./Link.astro";
 ---
 
 <div class="Page">
-  <main class="prose">
+  <main class="prose dark:prose-invert">
     <slot />
   </main>
 </div>
-<p class="text-center block pb-12"
-  >😂 there is nothing down here - <Link href="#">Back to Top👆</Link></p>
+<footer class="text-center pb-10">
+  <p class="prose dark:prose-invert m-0 mx-auto">
+    😂 there is nothing down here -&nbsp;<Link href="#">Back to Top👆</Link>
+  </p>
+</footer>
 
 <style>
   .Page {
