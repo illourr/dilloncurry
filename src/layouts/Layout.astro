@@ -42,8 +42,10 @@ const { title } = Astro.props;
   </body>
 </html>
 <style is:global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
   :root {
-    --page-max-width: 940px;
     --nav-height: 72px;
     --accent: 136, 58, 234;
     --accent-light: 224, 204, 250;
@@ -59,11 +61,11 @@ const { title } = Astro.props;
     font-family: "Gill Sans", sans-serif;
     font-size: 18px;
     background-size: 224px;
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
   }
-  body {
-    max-width: var(--page-max-width);
-    margin: 0 auto;
-  }
+
   code {
     font-family:
       Menlo,
@@ -79,7 +81,6 @@ const { title } = Astro.props;
     display: flex;
     justify-content: space-between;
     height: 72px;
-    max-width: var(--page-max-width);
     margin: 0 24px;
   }
 
