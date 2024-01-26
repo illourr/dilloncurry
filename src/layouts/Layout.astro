@@ -3,6 +3,8 @@ import Link from "../components/Link.astro";
 import Page from "../components/Page.astro";
 import { Image } from 'astro:assets';
 import myPicture from '../../public/images/me.png'
+import { inject } from "@vercel/analytics";
+inject()
 
 interface Props {
   title: string;
