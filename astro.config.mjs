@@ -8,6 +8,8 @@ export default defineConfig({
   integrations: [react(), tailwind()],
   output: "hybrid",
   adapter: vercel({
-    webAnalytics: true,
+    webAnalytics: {
+      enabled: true,
+    },
   }),
 });
