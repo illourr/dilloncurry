@@ -1,6 +1,8 @@
 ---
 import Link from "../components/Link.astro";
 import Page from "../components/Page.astro";
+import { Image } from 'astro:assets';
+import myPicture from '../../public/images/me.png'
 
 interface Props {
   title: string;
@@ -21,7 +23,7 @@ const { title } = Astro.props;
   </head>
   <body>
     <nav class=" prose">
-      <img src="/images/me.png" alt="Picture of Dillon Curry" class="my-1" />
+      <Image width="63" height="63" src={myPicture} alt="Picture of Dillon Curry" class="my-1" />
       <ul class="mt-0 flex items-center" >
         <li>
           <Link href="/">Home</Link>
