@@ -2,8 +2,8 @@ import { expect, test } from "bun:test";
 import { getDigits } from "../getDigits";
 
 test("positive number", () => {
-  const value = getDigits(100);
-  expect(value).toEqual([1, 0, 0]);
+  const value = getDigits(222);
+  expect(value).toEqual([2, 2, 2]);
 });
 
 test("negative number", () => {
