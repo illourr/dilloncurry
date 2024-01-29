@@ -3,7 +3,7 @@ import Link from "./Link.astro";
 import { fade } from 'astro:transitions';
 ---
 
-<div class="Page" transition:animate={fade({ duration: '0.4s' })}>
+<div class="Page" transition:animate="fade">
   <main class="prose prose-h1:font-semibold">
     <slot />
   </main>
