@@ -1,0 +1,27 @@
+---
+import Layout from "./Layout.astro";
+
+const { frontmatter: {title, date} } = Astro.props;
+
+// Assuming you have a Date object
+const currentDate = new Date(date);
+
+// Format the date using toLocaleDateString
+const formattedDate = currentDate.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  timeZone: "UTC"
+});
+---
+
+<Layout title={title}>
+  <header class="mt-4">
+    <h1 class="mb-2">{title}</h1>
+    <p class="text-gray-500">📝 Published on <time datetime={date}>{formattedDate}</time></p>
+  </header>
+
+  <article>
+    <slot />
+  </article>
+</Layout>

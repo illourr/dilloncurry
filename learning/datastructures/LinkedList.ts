@@ -1,76 +1,95 @@
-type NodeVal = number;
-class ListNode {
-  val: NodeVal;
-  next: ListNode | null;
-  constructor(value: NodeVal) {
-    this.val = value;
+class MyNode {
+  val: number;
+  next: MyNode | null;
+  constructor(val: number) {
+    this.val = val;
     this.next = null;
   }
 }
+
 class MyLinkedList {
-  list: ListNode | null;
+  head: MyNode | null;
+  length: number;
   constructor() {
-    this.list = null;
-  }
-  valueOf() {
-    return this.list;
+    this.head = null;
+    this.length = 0;
   }
 
   get(index: number): number {
-    let position = 0;
-    let currentNode = this.list;
-    while (position !== index && currentNode !== null) {
-      currentNode = currentNode.next;
-      position++;
+    if (index < 0 || index >= this.length) {
+      return -1;
     }
-    if (position === index && currentNode !== null) {
-      return currentNode.val;
+
+    let current = this.head;
+    for (let i = 0; i < index; i++) {
+      current = current!.next;
     }
-    return -1;
+
+    return current!.val;
   }
 
   addAtHead(val: number): void {
-    let next = this.list;
-    const newNode = new ListNode(val);
-    if (next !== null) {
-      newNode.next = next;
-    }
-    this.list = newNode;
+    const newNode = new MyNode(val);
+    newNode.next = this.head;
+    this.head = newNode;
+    this.length++;
   }
 
   addAtTail(val: number): void {
-    if (this.list == null) {
+    const newNode = new MyNode(val);
+
+    if (!this.head) {
+      this.head = newNode;
+    } else {
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
+
+    this.length++;
+  }
+
+  addAtIndex(index: number, val: number): void {
+    if (index < 0 || index > this.length) {
       return;
     }
 
-    let currentNode = this.list;
-    while (currentNode.next) {
-      currentNode = currentNode.next;
+    if (index === 0) {
+      this.addAtHead(val);
+    } else if (index === this.length) {
+      this.addAtTail(val);
+    } else {
+      let current = this.head;
+      for (let i = 0; i < index - 1; i++) {
+        current = current!.next;
+      }
+
+      const newNode = new MyNode(val);
+      newNode.next = current!.next;
+      current!.next = newNode;
+
+      this.length++;
     }
-    currentNode.next = new ListNode(val);
   }
 
-  addAtIndex(index: number, val: number): void {}
+  deleteAtIndex(index: number): void {
+    if (index < 0 || index >= this.length) {
+      return;
+    }
 
-  deleteAtIndex(index: number): void {}
+    if (index === 0) {
+      this.head = this.head!.next;
+    } else {
+      let current = this.head;
+      for (let i = 0; i < index - 1; i++) {
+        current = current!.next;
+      }
+
+      current!.next = current!.next!.next;
+    }
+
+    this.length--;
+  }
 }
-
-/**
- * Your MyLinkedList object will be instantiated and called as such:
- * var obj = new MyLinkedList()
- * var param_1 = obj.get(index)
- * obj.addAtHead(val)
- * obj.addAtTail(val)
- * obj.addAtIndex(index,val)
- * obj.deleteAtIndex(index)
- */
-
-const list = new MyLinkedList();
-
-list.addAtHead(2);
-list.addAtTail(5);
-list.addAtHead(1);
-list.addAtTail(7);
-list.addAtTail(9);
-
-console.log(list.get(3));
