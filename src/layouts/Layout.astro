@@ -1,9 +1,6 @@
 ---
-import Link from "../components/Link.astro";
 import Page from "../components/Page.astro";
-import { Image } from 'astro:assets';
-import myPicture from '../../public/images/me.png'
-
+import Header from "../components/Header.astro";
 interface Props {
   title: string;
 }
@@ -19,25 +16,10 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico " />
     <meta name="generator" content={Astro.generator} />
-    <title>Dillon Curry - {title}</title>
+    <title>{title} - dilloncurry.com</title>
   </head>
   <body>
-    <nav class=" prose">
-      <Image width="63" height="63" src={myPicture} alt="Picture of Dillon Curry" class="my-1" />
-      <ul class="mt-0 flex items-center" >
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li>
-          <Link href="/blog">Blog</Link>
-        </li>
-        <li>
-          <Link href="/resume">Resume</Link>
-        </li><li>
-          <Link href="/contact">Contact</Link>
-        </li>
-      </ul>
-    </nav>
+    <Header />
     <Page>
       <slot />
     </Page>
@@ -78,19 +60,5 @@ const { title } = Astro.props;
       Bitstream Vera Sans Mono,
       Courier New,
       monospace;
-  }
-  nav {
-    text-align: right;
-    margin: 0 auto;
-    padding: 0 24px;
-    max-width: 65ch;
-    display: flex;
-    justify-content: space-between;
-    height: 72px;
-  }
-
-  nav li {
-    display: inline-block;
-    padding-left: 4px;
   }
 </style>
